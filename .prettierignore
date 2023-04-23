@@ -1,0 +1,8 @@
+node_modules
+.husky
+.eslintignore
+.prettierignore
+coverage
+.gitignore
+dist
+skistar-activities-ical.iml

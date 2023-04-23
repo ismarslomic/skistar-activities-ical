@@ -1,0 +1,11 @@
+{
+  // Using the tsconfig bases for Node18 https://github.com/tsconfig/bases/blob/main/bases/node18.json
+  "extends": "@tsconfig/node18/tsconfig.json",
+  "compilerOptions": {
+    "preserveConstEnums": true,
+    "outDir": "dist",
+    "strict": false
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "__tests__/**/*", "__mocks__/**/*"]
+}
