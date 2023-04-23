@@ -1,9 +1,9 @@
 # Skistar activities exposed as iCal calendar
 
-[![CodeQL](https://github.com/ismarslomic/skistar-acitivities-ical/actions/workflows/codeql.yml/badge.svg)](https://github.com/ismarslomic/skistar-acitivities-ical/actions/workflows/codeql.yml)
-[![ESLint](https://github.com/ismarslomic/skistar-acitivities-ical/actions/workflows/eslint.yml/badge.svg)](https://github.com/ismarslomic/skistar-acitivities-ical/actions/workflows/eslint.yml)
-[![ESLint](https://github.com/ismarslomic/skistar-acitivities-ical/actions/workflows/build.yml/badge.svg)](https://github.com/ismarslomic/skistar-acitivities-ical/actions/workflows/build.yml)
-[![Unit tests](https://codecov.io/gh/ismarslomic/skistar-acitivities-ical/branch/main/graph/badge.svg?token=MQPHY294KB)](https://codecov.io/gh/ismarslomic/skistar-acitivities-ical)
+[![CodeQL](https://github.com/ismarslomic/skistar-activities-ical/actions/workflows/codeql.yml/badge.svg)](https://github.com/ismarslomic/skistar-activities-ical/actions/workflows/codeql.yml)
+[![ESLint](https://github.com/ismarslomic/skistar-activities-ical/actions/workflows/eslint.yml/badge.svg)](https://github.com/ismarslomic/skistar-activities-ical/actions/workflows/eslint.yml)
+[![ESLint](https://github.com/ismarslomic/skistar-activities-ical/actions/workflows/build.yml/badge.svg)](https://github.com/ismarslomic/skistar-activities-ical/actions/workflows/build.yml)
+[![Unit tests](https://codecov.io/gh/ismarslomic/skistar-activities-ical/branch/main/graph/badge.svg?token=MQPHY294KB)](https://codecov.io/gh/ismarslomic/skistar-activities-ical)
 
 > NodeJS app exposing the upcoming activities at Skistar destinations, similar to what is displayed
 > at [Activities in Hemsedal](https://www.skistar.com/en/ski-destinations/hemsedal/winter-in-hemsedal/events/) as valid
