@@ -4,9 +4,6 @@ ARG BASE_IMAGE="node:18.16.0-alpine"
 #### Build stage for compiling Typescript files ####
 FROM ${BASE_IMAGE} as builder
 
-# Alpine images missing dependencies
-RUN apk add --no-cache git
-
 # Create app directory
 WORKDIR /usr/src/app
 
