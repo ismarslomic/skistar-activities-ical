@@ -7,7 +7,7 @@
 
 > NodeJS app exposing the upcoming activities at Skistar destinations, similar to what is displayed
 > at [Activities in Hemsedal](https://www.skistar.com/en/ski-destinations/hemsedal/winter-in-hemsedal/events/) as valid
-> iCal calendar.
+> [iCalendar](https://en.wikipedia.org/wiki/ICalendar) from an HTTP endpoint.
 
 # Example
 
