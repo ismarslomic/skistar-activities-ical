@@ -76,14 +76,14 @@ All configuration can be done through environment variables, which you can defin
 DESTINATION=Trysil LANGUAGE=English npm run start
 ```
 
-| Name             | Default                | Description                                                                                                                                                |
-| ---------------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `PORT`           | `3000`                 | The server port serving the iCal file                                                                                                                      |
-| `HOST_NAME`      | `localhost`            | The server host name serving the iCal file                                                                                                                 |
-| `CAL_FILE_NAME`  | `skistar_calendar.ics` | The iCal file name used in the URL                                                                                                                         |
-| `DAYS_IN_FUTURE` | `14`                   | How many days in the future from now to retrieve Skistar actvities                                                                                         |
-| `DESTINATION`    | `Hemsedal`             | The Skistar destination to retrieve activities for. Valid options are: <br/>- `Hemsedal` <br/>- `Salen` <br/>- `Åre` <br/>- `Vemdalen` <br/>- `Trysil`     |
-| `LANGUAGE`       | `Norsk`                | The language used for text in event title and description. Valid options are:<br/>- `English` <br/>- `Norsk` <br/>- `Svenska`<br/>- `Dansk`<br/>- `Trysil` |
+| Name             | Default                | Description                                                                                                                                                 |
+| ---------------- | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `PORT`           | `3000`                 | The server port serving the iCal file                                                                                                                       |
+| `HOST_NAME`      | `localhost`            | The server host name serving the iCal file                                                                                                                  |
+| `CAL_FILE_NAME`  | `skistar_calendar.ics` | The iCal file name used in the URL                                                                                                                          |
+| `DAYS_IN_FUTURE` | `14`                   | How many days in the future from now to retrieve Skistar actvities                                                                                          |
+| `DESTINATION`    | `Hemsedal`             | The Skistar destination to retrieve activities for. Valid options are: <br/>- `Hemsedal` <br/>- `Salen` <br/>- `Åre` <br/>- `Vemdalen` <br/>- `Trysil`      |
+| `LANGUAGE`       | `Norsk`                | The language used for text in event title and description. Valid options are:<br/>- `English` <br/>- `Norsk` <br/>- `Svenska`<br/>- `Dansk`<br/>- `Deutsch` |
 
 ## Contribution
 
