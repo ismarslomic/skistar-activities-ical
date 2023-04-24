@@ -11,7 +11,7 @@
 
 # Example
 
-HTTP GET http://localhost:3000/skistar_calendar.ics
+HTTP GET http://localhost:3001/skistar_calendar.ics
 
 ```text
 BEGIN:VCALENDAR
@@ -62,23 +62,53 @@ END:VEVENT
 END:VCALENDAR
 ```
 
-## Run the application
+## Run
+
+### As Node service
 
 ```bash
 npm run start
 ```
 
-## Configuration
-
-All configuration can be done through environment variables, which you can define for example in this way:
+or to override default [Configurations](#configuration), for example
 
 ```bash
-DESTINATION=Trysil LANGUAGE=English npm run start
+DESTINATION=Trysil LANGUAGE=English CAL_FILE_NAME=skistar_activities_trysil.ics npm run start
 ```
+
+### As Docker container
+
+To run a Docker container with Docker Compose (v2):
+
+```bash
+docker compose up -d
+```
+
+_docker-compose.yml_
+
+```yaml
+services:
+  skistar-activities-ical:
+    container_name: skistar-activities-ical
+    image: ismarslomic/skistar-activities-ical:latest
+    restart: unless-stopped
+    ports:
+      - '3001:3001'
+    # network_mode: "host" # useful if testing on OSX to access container IP from host
+    environment:
+      - CAL_FILE_NAME=skistar_activities_trysil.ics
+      - DAYS_IN_FUTURE=3
+      - DESTINATION=Trysil
+      - LANGUAGE=English
+```
+
+## Configuration
+
+All configuration can be done through environment variables:
 
 | Name             | Default                | Description                                                                                                                                                 |
 | ---------------- | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `PORT`           | `3000`                 | The server port serving the iCal file                                                                                                                       |
+| `PORT`           | `3001`                 | The server port serving the iCal file                                                                                                                       |
 | `HOST_NAME`      | `localhost`            | The server host name serving the iCal file                                                                                                                  |
 | `CAL_FILE_NAME`  | `skistar_calendar.ics` | The iCal file name used in the URL                                                                                                                          |
 | `DAYS_IN_FUTURE` | `14`                   | How many days in the future from now to retrieve Skistar actvities                                                                                          |

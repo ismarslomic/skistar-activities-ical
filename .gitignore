@@ -238,3 +238,4 @@ Temporary Items
 
 eslint-results.sarif
 *.iml
+docker-compose.yml
