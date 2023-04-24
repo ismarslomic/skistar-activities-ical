@@ -16,11 +16,22 @@ const calendarService = new CalendarService(daysInFuture, destination, language,
 
 const main = async () => {
   try {
-    http
+    const serverInstance = http
       .createServer((req: http.IncomingMessage, res: http.ServerResponse) => calendarService.serveCalendar(res))
       .listen(port, hostName, () => {
         console.log(`Serving Skistar activities calendar at http://${hostName}:${port}/${calFileName}`)
       })
+
+    const shutdown = () => {
+      console.info('Closing the HTTP server...')
+
+      serverInstance.close(() => {
+        console.log('HTTP server closed')
+      })
+    }
+
+    process.on('SIGINT', shutdown)
+    process.on('SIGTERM', shutdown)
   } catch (e) {
     console.error('Failed to retrieve activities from Skistar API and create calendar', e)
   }
