@@ -3,7 +3,7 @@ import { SkistarLanguage } from './types/external/SkistarLanguage'
 import * as http from 'http'
 import { CalendarService } from './service/CalendarService'
 
-const port: number = process.env.PORT ? parseInt(process.env.PORT) : 3000
+const port: number = process.env.PORT ? parseInt(process.env.PORT) : 3001
 const hostName: string = process.env.HOST_NAME ? process.env.HOST_NAME : 'localhost'
 const calFileName: string = process.env.CAL_FILE_NAME ? process.env.CAL_FILE_NAME : 'skistar_calendar.ics'
 const daysInFuture: number = process.env.DAYS_IN_FUTURE ? parseInt(process.env.DAYS_IN_FUTURE) : 14
