@@ -36,7 +36,7 @@ export class CalendarService {
         events: activityEvents,
         prodId: { company: 'skistar.com', product: 'activities', language: 'NO' },
         timezone: {
-          name: 'Europe/Oslo',
+          name: ActivitiesService.timeZone,
           generator: getVtimezoneComponent,
         },
       })

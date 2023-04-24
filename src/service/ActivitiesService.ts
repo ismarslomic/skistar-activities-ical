@@ -6,9 +6,11 @@ import { SkistarActivity } from '../types/external/SkistarActivity'
 import { SkistarOccurrence } from '../types/external/SkistarOccurrence'
 import { ICalEventData } from 'ical-generator'
 import { DateTime } from 'luxon'
+import { v4 as uuidv4 } from 'uuid'
 
 export class ActivitiesService {
   static endpointUrl = 'https://www.skistar.com/__api/calendar/find'
+  static timeZone = 'Europe/Oslo'
 
   static async requestActivities(filterOptions: SkistarFilterOptions): Promise<ICalEventData[]> {
     console.debug(`Requesting activities from Skistar for filter ${JSON.stringify(filterOptions)}`)
@@ -76,7 +78,10 @@ export class ActivitiesService {
           const isWholeDay: boolean = occurrence.IsWholeDay
           const location: string = occurrence.LocationDescription ? occurrence.LocationDescription : destinationName
 
+          // Note! We make sure that all DateTimes (start, end, stamp) are in same timezone
           const event: ICalEventData = {
+            id: uuidv4(),
+            stamp: DateTime.now().setZone(ActivitiesService.timeZone),
             start: startTime,
             end: endTime,
             summary: summary,
@@ -115,11 +120,11 @@ export class ActivitiesService {
    * @returns a DateTime object in CEST timezone, example "2023-04-01T10:00:00+02:00"
    */
   static cestDateTime(date: string, time: string): DateTime {
-    const localDateTime = `${date} ${time} Europe/Oslo`
+    const localDateTime = `${date} ${time} ${ActivitiesService.timeZone}`
 
     // Example: Måndag 17 april 2023 10:00 Europe/Oslo
     const localFormat = 'cccc d LLLL yyyy HH:mm z'
 
-    return DateTime.fromFormat(localDateTime, localFormat, { locale: 'sv' })
+    return DateTime.fromFormat(localDateTime, localFormat, { locale: 'sv', setZone: true })
   }
 }

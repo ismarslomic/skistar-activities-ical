@@ -1,0 +1,264 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CalendarService createCalendar given 200 response with non empty list with activities calendar with 18 events are returned 1`] = `
+"BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//skistar.com//activities//NO
+NAME:Skistar activities in Åre
+X-WR-CALNAME:Skistar activities in Åre
+BEGIN:VTIMEZONE
+TZID:Europe/Oslo
+TZURL:http://tzurl.org/zoneinfo-outlook/Europe/Oslo
+X-LIC-LOCATION:Europe/Oslo
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+TIMEZONE-ID:Europe/Oslo
+X-WR-TIMEZONE:Europe/Oslo
+BEGIN:VEVENT
+UID:mock-uuid-1234
+SEQUENCE:0
+DTSTAMP:20230424T130000
+DTSTART:20230313T133000
+DTEND:20230313T140000
+SUMMARY:Meet Valle
+LOCATION:Valle's stage\\, Children's area
+DESCRIPTION:Say hello to Valle and get to know him even better. It is a pe
+ rfect opportunity to ask questions\\, take a picture or hear about his adve
+ ntures.
+ATTACH:https://www.skistar.com/calendar-api/assets/18/18d3a111-fd30-40b2-b
+ 277-2e625bfffef8/img8981ret.jpg
+END:VEVENT
+BEGIN:VEVENT
+UID:mock-uuid-1234
+SEQUENCE:0
+DTSTAMP:20230424T130000
+DTSTART;VALUE=DATE:20230313
+DTEND;VALUE=DATE:20230313
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+X-MICROSOFT-MSNCALENDAR-ALLDAYEVENT:TRUE
+SUMMARY:Climbing and rappelling at Fjellkafeen
+LOCATION:At Fjellkafeen
+DESCRIPTION:Suitable for everyone from about 7 years and up
+ATTACH:https://www.skistar.com/calendar-api/assets/7e/7e4414b1-0c15-4fe9-b
+ 472-dc29ebeeea9d/hemsedalklattring.jpg
+END:VEVENT
+BEGIN:VEVENT
+UID:mock-uuid-1234
+SEQUENCE:0
+DTSTAMP:20230424T130000
+DTSTART;VALUE=DATE:20230313
+DTEND;VALUE=DATE:20230313
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+X-MICROSOFT-MSNCALENDAR-ALLDAYEVENT:TRUE
+SUMMARY:Climbing and rappelling at Fjellkafeen
+LOCATION:At Fjellkafeen
+DESCRIPTION:Suitable for everyone from about 7 years and up
+ATTACH:https://www.skistar.com/calendar-api/assets/7e/7e4414b1-0c15-4fe9-b
+ 472-dc29ebeeea9d/hemsedalklattring.jpg
+END:VEVENT
+BEGIN:VEVENT
+UID:mock-uuid-1234
+SEQUENCE:0
+DTSTAMP:20230424T130000
+DTSTART:20230314T090000
+DTEND:20230314T190000
+SUMMARY:Non-stop skiing until 19:00
+LOCATION:Hemsedal skisenter
+DESCRIPTION:Lifts are open from 09:00 until 19:00.
+ATTACH:https://www.skistar.com/calendar-api/assets/43/43a85cd9-1f4e-4eb7-a
+ 462-653f5c1b0d7a/190408omhemsedal-31169lite.jpg
+END:VEVENT
+BEGIN:VEVENT
+UID:mock-uuid-1234
+SEQUENCE:0
+DTSTAMP:20230424T130000
+DTSTART:20230314T133000
+DTEND:20230314T140000
+SUMMARY:Valle's Adventure
+LOCATION:Valle's stage\\, Children's area
+DESCRIPTION:When Valle is on the go\\, you never know what may happen. Join
+  an activity with Valle\\, such as dancing stop and games.
+ATTACH:https://www.skistar.com/calendar-api/assets/4e/4ec22916-6a45-4f5b-b
+ ba1-453ac9d0ef03/img8950.jpg
+END:VEVENT
+BEGIN:VEVENT
+UID:mock-uuid-1234
+SEQUENCE:0
+DTSTAMP:20230424T130000
+DTSTART:20230314T151500
+DTEND:20230314T154500
+SUMMARY:Valle's Show
+LOCATION:Valle's stage by the children's area
+DESCRIPTION:Valle and his friends offer family entertainment in the form o
+ f singing and dancing\\, where learning is the common theme.
+ATTACH:https://www.skistar.com/calendar-api/assets/d8/d8846086-7d8e-492c-a
+ e2c-fb0c94bd3d32/412326220200680f87275k.jpg
+END:VEVENT
+BEGIN:VEVENT
+UID:mock-uuid-1234
+SEQUENCE:0
+DTSTAMP:20230424T130000
+DTSTART:20230315T090000
+DTEND:20230315T190000
+SUMMARY:Non-stop skiing until 19:00
+LOCATION:Hemsedal skisenter
+DESCRIPTION:Lifts are open from 09:00 until 19:00.
+ATTACH:https://www.skistar.com/calendar-api/assets/43/43a85cd9-1f4e-4eb7-a
+ 462-653f5c1b0d7a/190408omhemsedal-31169lite.jpg
+END:VEVENT
+BEGIN:VEVENT
+UID:mock-uuid-1234
+SEQUENCE:0
+DTSTAMP:20230424T130000
+DTSTART:20230315T141500
+DTEND:20230315T144500
+SUMMARY:Go skiing with Valle
+LOCATION:Lift A1 Valle 1\\, Children's Area
+DESCRIPTION:Valle is skiing with the children in the children's area. Give
+  Valle a hug\\, wave and say hello!
+ATTACH:https://www.skistar.com/calendar-api/assets/3a/3a84bf66-8e14-43ca-8
+ 1f3-46bd86b99f02/skiing-valle.jpg
+END:VEVENT
+BEGIN:VEVENT
+UID:mock-uuid-1234
+SEQUENCE:0
+DTSTAMP:20230424T130000
+DTSTART:20230315T163000
+DTEND:20230315T180000
+SUMMARY:Sledding in Fjellheisen
+LOCATION:Hemsedal skisenter
+DESCRIPTION:With a headlamp and snowracer\\, we sled down the mountain.
+ATTACH:https://www.skistar.com/calendar-api/assets/b6/b6a93634-8333-4e00-b
+ 7b0-7d877672e5bc/aking.jpg
+END:VEVENT
+BEGIN:VEVENT
+UID:mock-uuid-1234
+SEQUENCE:0
+DTSTAMP:20230424T130000
+DTSTART:20230315T183000
+DTEND:20230315T200000
+SUMMARY:Sledding from top to bottom
+LOCATION:Hemsedal skisenter
+DESCRIPTION:Sledding from top to bottom
+ATTACH:https://www.skistar.com/calendar-api/assets/1b/1b2016a8-55da-400c-b
+ 5cf-2d9ef91d1965/topp-til-bunn.jpg
+END:VEVENT
+BEGIN:VEVENT
+UID:mock-uuid-1234
+SEQUENCE:0
+DTSTAMP:20230424T130000
+DTSTART:20230316T110000
+DTEND:20230316T113000
+SUMMARY:Meet Valle
+LOCATION:Valle's stage\\, Children's area
+DESCRIPTION:Say hello to Valle and get to know him even better. It is a pe
+ rfect opportunity to ask questions\\, take a picture or hear about his adve
+ ntures.
+ATTACH:https://www.skistar.com/calendar-api/assets/18/18d3a111-fd30-40b2-b
+ 277-2e625bfffef8/img8981ret.jpg
+END:VEVENT
+BEGIN:VEVENT
+UID:mock-uuid-1234
+SEQUENCE:0
+DTSTAMP:20230424T130000
+DTSTART:20230316T140000
+DTEND:20230316T143000
+SUMMARY:Valle's Show
+LOCATION:Valle's stage by the children's area
+DESCRIPTION:Valle and his friends offer family entertainment in the form o
+ f singing and dancing\\, where learning is the common theme.
+ATTACH:https://www.skistar.com/calendar-api/assets/d8/d8846086-7d8e-492c-a
+ e2c-fb0c94bd3d32/412326220200680f87275k.jpg
+END:VEVENT
+BEGIN:VEVENT
+UID:mock-uuid-1234
+SEQUENCE:0
+DTSTAMP:20230424T130000
+DTSTART:20230316T160000
+DTEND:20230316T210000
+SUMMARY:Indoor climbing
+LOCATION:SkiStar Lodge Hemsedal Suites
+DESCRIPTION:Hemsedal climbing center is located in SkiStar Lodge Hemsedal 
+ Suites in Hemsedal ski center. The center consists of a 14 meter high clim
+ bing wall and a large boulder area.
+ATTACH:https://www.skistar.com/calendar-api/assets/8a/8ab11984-a76a-4693-b
+ 5c4-50200ce8f5a6/klatring-inne.jpg
+END:VEVENT
+BEGIN:VEVENT
+UID:mock-uuid-1234
+SEQUENCE:0
+DTSTAMP:20230424T130000
+DTSTART:20230317T110000
+DTEND:20230317T113000
+SUMMARY:Go skiing with Valle
+LOCATION:Lift A1 Valle 1\\, Children's Area
+DESCRIPTION:Valle is skiing with the children in the children's area. Give
+  Valle a hug\\, wave and say hello!
+ATTACH:https://www.skistar.com/calendar-api/assets/3a/3a84bf66-8e14-43ca-8
+ 1f3-46bd86b99f02/skiing-valle.jpg
+END:VEVENT
+BEGIN:VEVENT
+UID:mock-uuid-1234
+SEQUENCE:0
+DTSTAMP:20230424T130000
+DTSTART:20230317T180000
+DTEND:20230317T193000
+SUMMARY:Sledding in Fjellheisen
+LOCATION:Hemsedal skisenter
+DESCRIPTION:With a headlamp and snowracer\\, we sled down the mountain.
+ATTACH:https://www.skistar.com/calendar-api/assets/b6/b6a93634-8333-4e00-b
+ 7b0-7d877672e5bc/aking.jpg
+END:VEVENT
+BEGIN:VEVENT
+UID:mock-uuid-1234
+SEQUENCE:0
+DTSTAMP:20230424T130000
+DTSTART:20230317T180000
+DTEND:20230317T210000
+SUMMARY:Indoor climbing
+LOCATION:SkiStar Lodge Hemsedal Suites
+DESCRIPTION:Hemsedal climbing center is located in SkiStar Lodge Hemsedal 
+ Suites in Hemsedal ski center. The center consists of a 14 meter high clim
+ bing wall and a large boulder area.
+ATTACH:https://www.skistar.com/calendar-api/assets/8a/8ab11984-a76a-4693-b
+ 5c4-50200ce8f5a6/klatring-inne.jpg
+END:VEVENT
+BEGIN:VEVENT
+UID:mock-uuid-1234
+SEQUENCE:0
+DTSTAMP:20230424T130000
+DTSTART:20230317T180000
+DTEND:20230317T203000
+SUMMARY:Evening skiing
+LOCATION:Hemsedal skisenter
+DESCRIPTION:Evening skiing at 1800-2030
+ATTACH:https://www.skistar.com/calendar-api/assets/69/695b1ed3-e293-4b89-8
+ d12-9a0a55135f4b/kveldsskihemsedal.jpg
+END:VEVENT
+BEGIN:VEVENT
+UID:mock-uuid-1234
+SEQUENCE:0
+DTSTAMP:20230424T130000
+DTSTART:20230317T200000
+DTEND:20230317T213000
+SUMMARY:Sledding from top to bottom
+LOCATION:Hemsedal skisenter
+DESCRIPTION:Sledding from top to bottom
+ATTACH:https://www.skistar.com/calendar-api/assets/1b/1b2016a8-55da-400c-b
+ 5cf-2d9ef91d1965/topp-til-bunn.jpg
+END:VEVENT
+END:VCALENDAR"
+`;

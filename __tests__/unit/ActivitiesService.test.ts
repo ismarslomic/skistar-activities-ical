@@ -42,8 +42,8 @@ describe('ActivitiesService requestActivities', () => {
       })
 
       const actualEvent: ICalEventData = events[0]
-      expect((actualEvent.start as DateTime).toISO()).toBe(DateTime.fromISO('2023-03-13T13:30:00+01:00').toISO())
-      expect((actualEvent.end as DateTime).toISO()).toBe(DateTime.fromISO('2023-03-13T14:00:00+01:00').toISO())
+      expect((actualEvent.start as DateTime).toString()).toBe('2023-03-13T13:30:00.000+01:00')
+      expect((actualEvent.end as DateTime).toString()).toBe('2023-03-13T14:00:00.000+01:00')
       expect(actualEvent.summary).toBe('Meet Valle')
       expect(actualEvent.description).toBe(
         'Say hello to Valle and get to know him even better. It is a perfect opportunity to ask questions, take a picture or hear about his adventures.'
@@ -67,15 +67,15 @@ describe('ActivitiesService requestActivities', () => {
       })
 
       const firstEvent: ICalEventData = events[1]
-      expect((firstEvent.start as DateTime).toISO()).toBe(DateTime.fromISO('2023-03-13T00:00:00+01:00').toISO())
-      expect((firstEvent.end as DateTime).toISO()).toBe(DateTime.fromISO('2023-03-13T00:00:00+01:00').toISO())
+      expect((firstEvent.start as DateTime).toString()).toBe('2023-03-13T00:00:00.000+01:00')
+      expect((firstEvent.end as DateTime).toString()).toBe('2023-03-13T00:00:00.000+01:00')
       expect(firstEvent.summary).toBe('Climbing and rappelling at Fjellkafeen')
       expect(firstEvent.location).toBe('At Fjellkafeen')
       expect(firstEvent.allDay).toBe(true)
 
       const secondEvent: ICalEventData = events[2]
-      expect((secondEvent.start as DateTime).toISO()).toBe(DateTime.fromISO('2023-03-13T00:00:00+01:00').toISO())
-      expect((secondEvent.end as DateTime).toISO()).toBe(DateTime.fromISO('2023-03-13T00:00:00+01:00').toISO())
+      expect((secondEvent.start as DateTime).toString()).toBe('2023-03-13T00:00:00.000+01:00')
+      expect((secondEvent.end as DateTime).toString()).toBe('2023-03-13T00:00:00.000+01:00')
       expect(secondEvent.summary).toBe('Climbing and rappelling at Fjellkafeen')
       expect(secondEvent.location).toBe('At Fjellkafeen')
       expect(secondEvent.allDay).toBe(true)
@@ -103,11 +103,11 @@ describe('ActivitiesService requestActivities', () => {
 describe('ActivitiesService cestDateTime', () => {
   test('should return CEST DateTime when day above 9, winter time (+01:00)', async () => {
     const actualDateTime: DateTime = ActivitiesService.cestDateTime('Fredag 17 mars 2023', '09:00')
-    expect(actualDateTime.toISO()).toBe('2023-03-17T09:00:00.000+01:00')
+    expect(actualDateTime.toString()).toBe('2023-03-17T09:00:00.000+01:00')
   })
 
   test('should return CEST DateTime when day below 10 is not padded with 0, summer time (+02:00)', async () => {
     const actualDateTime: DateTime = ActivitiesService.cestDateTime('Lördag 1 april 2023', '09:00')
-    expect(actualDateTime.toISO()).toBe('2023-04-01T09:00:00.000+02:00')
+    expect(actualDateTime.toString()).toBe('2023-04-01T09:00:00.000+02:00')
   })
 })

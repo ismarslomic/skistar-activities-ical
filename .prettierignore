@@ -6,3 +6,4 @@ coverage
 .gitignore
 dist
 skistar-activities-ical.iml
+__tests__/**/*.snap
