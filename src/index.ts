@@ -2,6 +2,8 @@ import { SkistarDestination } from './types/external/SkistarDestination'
 import { SkistarLanguage } from './types/external/SkistarLanguage'
 import * as http from 'http'
 import { CalendarService } from './service/CalendarService'
+import { logger } from './logging/logger'
+import { morganMiddleware } from './logging/morganMiddleware'
 
 const port: number = process.env.PORT ? parseInt(process.env.PORT) : 3001
 const hostName: string = process.env.HOST_NAME ? process.env.HOST_NAME : 'localhost'
@@ -17,23 +19,27 @@ const calendarService = new CalendarService(daysInFuture, destination, language,
 const main = async () => {
   try {
     const serverInstance = http
-      .createServer((req: http.IncomingMessage, res: http.ServerResponse) => calendarService.serveCalendar(res))
+      .createServer((req: http.IncomingMessage, res: http.ServerResponse) => {
+        morganMiddleware(req, res, function () {
+          calendarService.serveCalendar(res)
+        })
+      })
       .listen(port, hostName, () => {
-        console.log(`Serving Skistar activities calendar at http://${hostName}:${port}/${calFileName}`)
+        logger.info(`Serving Skistar activities calendar at http://${hostName}:${port}/${calFileName}`)
       })
 
     const shutdown = () => {
-      console.info('Closing the HTTP server...')
+      logger.info('Closing the HTTP server...')
 
       serverInstance.close(() => {
-        console.log('HTTP server closed')
+        logger.info('HTTP server closed')
       })
     }
 
     process.on('SIGINT', shutdown)
     process.on('SIGTERM', shutdown)
   } catch (e) {
-    console.error('Failed to retrieve activities from Skistar API and create calendar', e)
+    logger.error('Failed to retrieve activities from Skistar API and create calendar', e)
   }
 }
 

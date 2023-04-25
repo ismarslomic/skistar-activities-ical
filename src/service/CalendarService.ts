@@ -5,6 +5,7 @@ import { getVtimezoneComponent } from '@touch4it/ical-timezones'
 import * as http from 'http'
 import { SkistarDestination } from '../types/external/SkistarDestination'
 import { SkistarLanguage } from '../types/external/SkistarLanguage'
+import { logger } from '../logging/logger'
 
 export class CalendarService {
   private readonly daysInFuture: number
@@ -27,7 +28,7 @@ export class CalendarService {
         destinationFilter: this.destination,
         language: this.language,
       })
-      console.info(`Retrieved ${activityEvents.length} activity events from Skistar`)
+      logger.info(`Retrieved ${activityEvents.length} activity events from Skistar`)
 
       const destinationName = this.getDestinationName(this.destination)
 
@@ -41,7 +42,7 @@ export class CalendarService {
         },
       })
     } catch (e) {
-      console.error('Failed to retrieve activities from Skistar API and create the calendar', e)
+      logger.error('Failed to retrieve activities from Skistar API and create the calendar', e)
 
       return ical({
         name: 'Skistar activities in Hemsedal',

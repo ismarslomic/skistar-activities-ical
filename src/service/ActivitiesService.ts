@@ -7,13 +7,14 @@ import { SkistarOccurrence } from '../types/external/SkistarOccurrence'
 import { ICalEventData } from 'ical-generator'
 import { DateTime } from 'luxon'
 import { v4 as uuidv4 } from 'uuid'
+import { logger } from '../logging/logger'
 
 export class ActivitiesService {
   static endpointUrl = 'https://www.skistar.com/__api/calendar/find'
   static timeZone = 'Europe/Oslo'
 
   static async requestActivities(filterOptions: SkistarFilterOptions): Promise<ICalEventData[]> {
-    console.debug(`Requesting activities from Skistar for filter ${JSON.stringify(filterOptions)}`)
+    logger.info(`Requesting activities from Skistar for filter ${JSON.stringify(filterOptions)}`)
 
     const requestBody = {
       fromDate: filterOptions.fromDate.toISODate(),
@@ -36,7 +37,7 @@ export class ActivitiesService {
       axios
         .post<SkistarActivity[]>(ActivitiesService.endpointUrl, requestBody, config)
         .then((response: AxiosResponse<SkistarActivity[]>) => {
-          console.debug('Reading successfully activities from Skistar API.')
+          logger.info('Reading successfully activities from Skistar API.')
 
           const events: ICalEventData[] = []
           response.data.forEach((skistarActivity: SkistarActivity) =>
@@ -46,7 +47,7 @@ export class ActivitiesService {
           resolve(events)
         })
         .catch((error: AxiosError) => {
-          console.error('Reading activities from Skistar API failed', error)
+          logger.info('Reading activities from Skistar API failed', error)
           reject(error.message)
         })
     })
