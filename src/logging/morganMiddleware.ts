@@ -26,6 +26,9 @@ const jsonTokens = (tokens, req, res) => {
     status: Number.parseFloat(tokens.status(req, res)),
     content_length: tokens.res(req, res, 'content-length'),
     response_time: Number.parseFloat(tokens['response-time'](req, res)),
+    referrer: tokens['referrer'](req, res),
+    user_agent: tokens['user-agent'](req, res),
+    remote_address: tokens['remote-addr'](req, res),
   })
 }
 
