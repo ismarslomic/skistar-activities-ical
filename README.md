@@ -96,6 +96,7 @@ services:
       - '3001:3001'
     # network_mode: "host" # useful if testing on OSX to access container IP from host
     environment:
+      - TZ=Europe/Oslo # setting the timezone for the container OS
       - CAL_FILE_NAME=skistar_activities_trysil.ics
       - DAYS_IN_FUTURE=3
       - DESTINATION=Trysil
@@ -108,9 +109,8 @@ All configuration can be done through environment variables:
 
 | Name             | Default                | Description                                                                                                                                                 |
 | ---------------- | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `PORT`           | `3001`                 | The server port serving the iCal file                                                                                                                       |
-| `HOST_NAME`      | `localhost`            | The server host name serving the iCal file                                                                                                                  |
-| `CAL_FILE_NAME`  | `skistar_calendar.ics` | The iCal file name used in the URL                                                                                                                          |
+| `PORT`           | `3001`                 | The port for Node server serving the iCalendar file                                                                                                         |
+| `CAL_FILE_NAME`  | `skistar_calendar.ics` | The name of the iCalendar file used in the URL                                                                                                              |
 | `DAYS_IN_FUTURE` | `14`                   | How many days in the future from now to retrieve Skistar actvities                                                                                          |
 | `DESTINATION`    | `Hemsedal`             | The Skistar destination to retrieve activities for. Valid options are: <br/>- `Hemsedal` <br/>- `Salen` <br/>- `Åre` <br/>- `Vemdalen` <br/>- `Trysil`      |
 | `LANGUAGE`       | `Norsk`                | The language used for text in event title and description. Valid options are:<br/>- `English` <br/>- `Norsk` <br/>- `Svenska`<br/>- `Dansk`<br/>- `Deutsch` |

@@ -6,7 +6,6 @@ import { logger } from './logging/logger'
 import { morganMiddleware } from './logging/morganMiddleware'
 
 const port: number = process.env.PORT ? parseInt(process.env.PORT) : 3001
-const hostName: string = process.env.HOST_NAME ? process.env.HOST_NAME : 'localhost'
 const calFileName: string = process.env.CAL_FILE_NAME ? process.env.CAL_FILE_NAME : 'skistar_calendar.ics'
 const daysInFuture: number = process.env.DAYS_IN_FUTURE ? parseInt(process.env.DAYS_IN_FUTURE) : 14
 const destination: SkistarDestination = process.env.DESTINATION
@@ -24,8 +23,8 @@ const main = async () => {
           calendarService.serveCalendar(res)
         })
       })
-      .listen(port, hostName, () => {
-        logger.info(`Serving Skistar activities calendar at http://${hostName}:${port}/${calFileName}`)
+      .listen(port, () => {
+        logger.info(`Serving Skistar activities calendar at http://localhost:${port}/${calFileName}`)
       })
 
     const shutdown = () => {

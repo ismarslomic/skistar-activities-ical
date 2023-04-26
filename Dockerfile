@@ -56,6 +56,4 @@ RUN CI=true npm install --omit=dev
 # Copy compiled files from 'dist' directory to current
 COPY --chown=node:node --from=builder /usr/src/app/dist .
 
-EXPOSE 3001
-
 CMD [ "node", "index.js" ]
