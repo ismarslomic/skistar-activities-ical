@@ -94,7 +94,7 @@ jobs:
       # Setup QEMU for building various versions of container
       # https://github.com/docker/setup-qemu-action
       - name: Set up QEMU
-        uses: docker/setup-qemu-action@v2
+        uses: docker/setup-qemu-action@v3
 
       # Setup Buildx before building container
       # https://github.com/docker/setup-buildx-action
