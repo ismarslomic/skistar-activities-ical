@@ -61,8 +61,14 @@ export class CalendarService {
     return Object.keys(SkistarDestination)[indexOfValue]
   }
 
-  async serveCalendar(res: http.ServerResponse): Promise<ICalCalendar> {
+  async serveCalendar(res: http.ServerResponse) {
     const calendar: ICalCalendar = await this.createCalendar()
-    return calendar.serve(res, this.calFileName)
+
+    res.writeHead(200, {
+      'Content-Type': 'text/calendar; charset=utf-8',
+      'Content-Disposition': `attachment; filename=${this.calFileName}`,
+    })
+
+    res.end(calendar.toString())
   }
 }
