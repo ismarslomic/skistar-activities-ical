@@ -137,6 +137,22 @@ npm run prettier
 npm run test:unit
 ```
 
+### Verifying multi-platform Docker build locally
+
+Example using `colima` on Mac OSX
+
+```bash
+docker buildx create --use colima
+
+# To support arm/v6 and arm/v7 in colima
+docker run --privileged --rm tonistiigi/binfmt --install all
+
+docker buildx build \
+--file ./Dockerfile \
+--platform linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64/v8 \
+.
+```
+
 ### Codecov integration in Github actions
 
 Add **Repository secret** in your Github repository with name `CODECOV_TOKEN` and a
