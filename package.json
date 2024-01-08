@@ -48,8 +48,8 @@
   },
   "dependencies": {
     "@touch4it/ical-timezones": "^1.9.0",
-    "axios": "^1.6.3",
-    "ical-generator": "^6.0.0",
+    "axios": "^1.6.5",
+    "ical-generator": "^6.0.1",
     "is-ci": "^3.0.1",
     "luxon": "^3.4.4",
     "morgan": "^1.10.0",
