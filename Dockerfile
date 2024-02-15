@@ -1,5 +1,5 @@
 # Using multi stage build
-ARG BASE_IMAGE="node:18.18.2-alpine"
+ARG BASE_IMAGE="node:20.11.0-bookworm-slim"
 
 #### Build stage for compiling Typescript files ####
 FROM ${BASE_IMAGE} as builder
@@ -27,7 +27,7 @@ FROM ${BASE_IMAGE}
 ENV NODE_ENV production
 
 # Install timezone database to allow setting timezone through TZ environment variable
-RUN apk add --no-cache tzdata
+RUN apt install tzdata
 
 # Don’t run Node.js apps as root
 USER node
