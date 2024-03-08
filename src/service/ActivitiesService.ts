@@ -8,6 +8,7 @@ import { ICalEventData } from 'ical-generator'
 import { DateTime } from 'luxon'
 import { v4 as uuidv4 } from 'uuid'
 import { logger } from '../logging/logger'
+import { SkistarLanguage } from '../types/external/SkistarLanguage'
 
 export class ActivitiesService {
   static endpointUrl = 'https://www.skistar.com/__api/calendar/find'
@@ -41,7 +42,7 @@ export class ActivitiesService {
 
           const events: ICalEventData[] = []
           response.data.forEach((skistarActivity: SkistarActivity) =>
-            events.push(...mapToCalendarEvent(skistarActivity))
+            events.push(...mapToCalendarEvent(skistarActivity, filterOptions.language))
           )
 
           resolve(events)
@@ -52,8 +53,8 @@ export class ActivitiesService {
         })
     })
 
-    function mapToCalendarEvent(activity: SkistarActivity): ICalEventData[] {
-      const localDateString: string = activity.Date // Måndag 17 april 2023
+    function mapToCalendarEvent(activity: SkistarActivity, language: SkistarLanguage): ICalEventData[] {
+      const localDateString: string = activity.Date // example: Måndag 17 april 2023
       const summary: string = activity.Heading
       const description: string = activity.Description
       const events: ICalEventData[] = []
@@ -68,12 +69,12 @@ export class ActivitiesService {
           let endTime: DateTime
 
           if (occurrence.StartTime != null && occurrence.EndTime != null) {
-            startTime = ActivitiesService.cestDateTime(localDateString, occurrence.StartTime)
-            endTime = ActivitiesService.cestDateTime(localDateString, occurrence.EndTime)
+            startTime = ActivitiesService.cestDateTime(localDateString, occurrence.StartTime, language.valueOf())
+            endTime = ActivitiesService.cestDateTime(localDateString, occurrence.EndTime, language.valueOf())
           } else {
             // handles whole day events
-            startTime = ActivitiesService.cestDateTime(localDateString, '00:00')
-            endTime = ActivitiesService.cestDateTime(localDateString, '00:00')
+            startTime = ActivitiesService.cestDateTime(localDateString, '00:00', language.valueOf())
+            endTime = ActivitiesService.cestDateTime(localDateString, '00:00', language.valueOf())
           }
 
           const isWholeDay: boolean = occurrence.IsWholeDay
@@ -116,16 +117,17 @@ export class ActivitiesService {
 
   /**
    *
-   * @param date as a string in the format "cccc d LLLL yyyy" in swedish, example "Lördag 1 april 2023"
+   * @param date as a string in the format "cccc d LLLL yyyy", example "Lördag 1 april 2023"
    * @param time as a string in the format "HH:mm", example "10:00"
+   * @param locale as a string, must match the locale of the date param
    * @returns a DateTime object in CEST timezone, example "2023-04-01T10:00:00+02:00"
    */
-  static cestDateTime(date: string, time: string): DateTime {
+  static cestDateTime(date: string, time: string, locale: string): DateTime {
     const localDateTime = `${date} ${time} ${ActivitiesService.timeZone}`
 
     // Example: Måndag 17 april 2023 10:00 Europe/Oslo
     const localFormat = 'cccc d LLLL yyyy HH:mm z'
 
-    return DateTime.fromFormat(localDateTime, localFormat, { locale: 'sv', setZone: true })
+    return DateTime.fromFormat(localDateTime, localFormat, { locale: locale, setZone: true })
   }
 }

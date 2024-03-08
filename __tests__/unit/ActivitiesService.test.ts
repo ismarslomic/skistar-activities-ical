@@ -38,7 +38,7 @@ describe('ActivitiesService requestActivities', () => {
         fromDate: DateTime.fromISO('2023-03-13'),
         toDate: DateTime.fromISO('2023-03-13'),
         destinationFilter: SkistarDestination.Hemsedal,
-        language: SkistarLanguage.Norsk,
+        language: SkistarLanguage.Svenska,
       })
 
       const actualEvent: ICalEventData = events[0]
@@ -63,7 +63,7 @@ describe('ActivitiesService requestActivities', () => {
         fromDate: DateTime.fromISO('2023-03-13'),
         toDate: DateTime.fromISO('2023-03-13'),
         destinationFilter: SkistarDestination.Hemsedal,
-        language: SkistarLanguage.Norsk,
+        language: SkistarLanguage.Svenska,
       })
 
       const firstEvent: ICalEventData = events[1]
@@ -102,12 +102,17 @@ describe('ActivitiesService requestActivities', () => {
 
 describe('ActivitiesService cestDateTime', () => {
   test('should return CEST DateTime when day above 9, winter time (+01:00)', async () => {
-    const actualDateTime: DateTime = ActivitiesService.cestDateTime('Fredag 17 mars 2023', '09:00')
+    const actualDateTime: DateTime = ActivitiesService.cestDateTime('Fredag 17 mars 2023', '09:00', 'sv')
     expect(actualDateTime.toString()).toBe('2023-03-17T09:00:00.000+01:00')
   })
 
   test('should return CEST DateTime when day below 10 is not padded with 0, summer time (+02:00)', async () => {
-    const actualDateTime: DateTime = ActivitiesService.cestDateTime('Lördag 1 april 2023', '09:00')
+    const actualDateTime: DateTime = ActivitiesService.cestDateTime('Lördag 1 april 2023', '09:00', 'sv')
+    expect(actualDateTime.toString()).toBe('2023-04-01T09:00:00.000+02:00')
+  })
+
+  test('should return CEST DateTime when using norwegian locale', async () => {
+    const actualDateTime: DateTime = ActivitiesService.cestDateTime('Lørdag 1 april 2023', '09:00', 'no')
     expect(actualDateTime.toString()).toBe('2023-04-01T09:00:00.000+02:00')
   })
 })

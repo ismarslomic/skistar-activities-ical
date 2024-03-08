@@ -31,7 +31,7 @@ describe('CalendarService createCalendar', () => {
       const calendarService: CalendarService = new CalendarService(
         14,
         SkistarDestination.Åre,
-        SkistarLanguage.Norsk,
+        SkistarLanguage.Svenska,
         'calendar.ics'
       )
 
