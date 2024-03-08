@@ -44,8 +44,10 @@ export class CalendarService {
     } catch (e) {
       logger.error('Failed to retrieve activities from Skistar API and create the calendar', e)
 
+      const destinationName = this.getDestinationName(this.destination)
+
       return ical({
-        name: 'Skistar activities in Hemsedal',
+        name: `Skistar activities in ${destinationName}`,
         events: [],
         prodId: { company: 'skistar.com', product: 'activities', language: 'NO' },
         timezone: {
