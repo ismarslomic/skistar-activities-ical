@@ -1,8 +1,8 @@
 # Using multi stage build
-ARG BASE_IMAGE="node:22.4.0-bookworm-slim"
+ARG BASE_IMAGE="node:22.3.0-bookworm-slim"
 
 #### Build stage for compiling Typescript files ####
-FROM ${BASE_IMAGE} as builder
+FROM ${BASE_IMAGE} AS builder
 
 # Create app directory
 WORKDIR /usr/src/app
