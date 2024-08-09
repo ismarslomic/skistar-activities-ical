@@ -49,11 +49,11 @@
   "dependencies": {
     "@touch4it/ical-timezones": "^1.9.0",
     "axios": "^1.7.3",
-    "ical-generator": "^7.1.0",
+    "ical-generator": "^7.2.0",
     "is-ci": "^3.0.1",
     "luxon": "^3.5.0",
     "morgan": "^1.10.0",
     "uuid": "^10.0.0",
-    "winston": "^3.13.1"
+    "winston": "^3.14.1"
   }
 }
