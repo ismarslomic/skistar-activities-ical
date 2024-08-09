@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 import nock = require('nock')
 import { ActivitiesService } from '../../src/service/ActivitiesService'
 import * as mockResponse from '../../__mocks__/activitiesResponseMock'

@@ -4,6 +4,7 @@ import { SkistarLanguage } from '../../src/types/external/SkistarLanguage'
 import * as mockResponse from '../../__mocks__/activitiesResponseMock'
 import { DateTime } from 'luxon'
 import { ICalEventData } from 'ical-generator'
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 import nock = require('nock')
 
 describe('ActivitiesService requestActivities', () => {
