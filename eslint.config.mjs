@@ -24,6 +24,15 @@ export default [
       '@typescript-eslint': typescriptEslint,
     },
 
+    rules: {
+      '@typescript-eslint/no-require-imports': [
+        'error',
+        {
+          allowAsImport: true,
+        },
+      ],
+    },
+
     languageOptions: {
       globals: {
         ...Object.fromEntries(Object.entries(globals.browser).map(([key]) => [key, 'off'])),
