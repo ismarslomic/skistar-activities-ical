@@ -20,7 +20,7 @@
     "lint:fix": "npx eslint . --fix",
     "prettier": "npx prettier --check .",
     "prettier:fix": "npx prettier --write .",
-    "prepare": "is-ci || husky install",
+    "prepare": "is-ci || husky",
     "install:dep": "CI=true npm install --omit=dev",
     "test:unit": "jest",
     "test:unit:coverage": "jest --coverage",
