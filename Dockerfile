@@ -26,7 +26,7 @@ FROM ${BASE_IMAGE}
 
 ARG BUILD_DATE
 ARG DOCKER_TAG
-ARG GIT_SHA
+ARG GIT_COMMIT_SHA
 
 ENV NODE_ENV=production
 
@@ -42,7 +42,7 @@ LABEL org.opencontainers.image.created=$BUILD_DATE \
   org.opencontainers.image.documentation="https://github.com/ismarslomic/skistar-activities-ical" \
   org.opencontainers.image.source="https://github.com/ismarslomic/skistar-activities-ical" \
   org.opencontainers.image.version=$DOCKER_TAG \
-  org.opencontainers.image.revision=$GIT_SHA \
+  org.opencontainers.image.revision=$GIT_COMMIT_SHA \
   org.opencontainers.image.vendor="ismarslomic" \
   org.opencontainers.image.licenses="MIT" \
   org.opencontainers.image.ref.name="" \

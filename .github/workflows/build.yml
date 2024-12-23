@@ -123,7 +123,7 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           # sending build arguments to the Dockerfile
           build-args: |
-            GIT_SHA=$GITHUB_SHA
+            GIT_COMMIT_SHA=${{ github.sha }}
             BUILD_DATE=${{ steps.date.outputs.date }}
             DOCKER_TAG=${{ steps.vars.outputs.tag }}
 
