@@ -71,11 +71,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Set variable for current date used in container label (see Dockerfile)
-      - name: Get Current Date
-        id: date
-        run: echo "date=$(date --utc +'%Y-%m-%dT%H:%M:%SZ')" >> $GITHUB_OUTPUT
-
       # Extract metadata (tags, labels, image name) from GIT to use in Docker Build Push step
       # https://github.com/docker/metadata-action
       - name: Docker meta
@@ -90,6 +85,11 @@ jobs:
             type=ref,event=branch
             type=ref,event=pr
             type=semver,pattern={{version}}
+          labels: |
+            maintainer=Ismar Slomic
+            org.opencontainers.image.documentation=https://github.com/ismarslomic/skistar-activities-ical
+            org.opencontainers.image.vendor=ismarslomic
+            org.opencontainers.image.description=NodeJS app exposing the upcoming activities at an specific Skistar destinations as valid iCalendar from an HTTP endpoint.
 
       # Setup QEMU for building various versions of container
       # https://github.com/docker/setup-qemu-action
@@ -121,11 +121,6 @@ jobs:
           platforms: linux/amd64,linux/arm/v7,linux/arm64/v8
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          # sending build arguments to the Dockerfile
-          build-args: |
-            GIT_COMMIT_SHA=${{ github.sha }}
-            BUILD_DATE=${{ steps.date.outputs.date }}
-            DOCKER_TAG=${{ steps.vars.outputs.tag }}
 
       # Show image digest from docker build
       - name: Image Digest
