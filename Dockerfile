@@ -24,7 +24,11 @@ RUN npm run build
 #### Build stage for running the Javascript in production ####
 FROM ${BASE_IMAGE}
 
-ENV NODE_ENV production
+ARG BUILD_DATE
+ARG DOCKER_TAG
+ARG GIT_SHA
+
+ENV NODE_ENV=production
 
 # Install timezone database to allow setting timezone through TZ environment variable
 RUN apt install tzdata
