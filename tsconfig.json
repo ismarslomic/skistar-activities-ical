@@ -1,6 +1,6 @@
 {
-  // Using the tsconfig bases for Node18 https://github.com/tsconfig/bases/blob/main/bases/node18.json
-  "extends": "@tsconfig/node18/tsconfig.json",
+  // Using the tsconfig bases for Node22 https://github.com/tsconfig/bases/blob/main/bases/node22.json
+  "extends": "@tsconfig/node22/tsconfig.json",
   "compilerOptions": {
     "preserveConstEnums": true,
     "outDir": "dist",
