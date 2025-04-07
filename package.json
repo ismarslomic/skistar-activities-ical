@@ -30,7 +30,7 @@
     "@microsoft/eslint-formatter-sarif": "^3.1.0",
     "@tsconfig/node22": "^22.0.1",
     "@types/jest": "^29.5.14",
-    "@types/luxon": "^3.4.2",
+    "@types/luxon": "^3.6.2",
     "@types/morgan": "^1.9.9",
     "@types/node": "^22.13.14",
     "@typescript-eslint/eslint-plugin": "^8.29.0",
@@ -51,7 +51,7 @@
     "axios": "^1.8.4",
     "ical-generator": "^8.1.1",
     "is-ci": "^4.1.0",
-    "luxon": "^3.6.0",
+    "luxon": "^3.6.1",
     "morgan": "^1.10.0",
     "uuid": "^11.1.0",
     "winston": "^3.17.0"
