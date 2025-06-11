@@ -31,7 +31,7 @@
     "@tsconfig/node22": "^22.0.2",
     "@types/jest": "^29.5.14",
     "@types/luxon": "^3.6.2",
-    "@types/morgan": "^1.9.9",
+    "@types/morgan": "^1.9.10",
     "@types/node": "^22.15.30",
     "@typescript-eslint/eslint-plugin": "^8.32.1",
     "@typescript-eslint/parser": "^8.34.0",
