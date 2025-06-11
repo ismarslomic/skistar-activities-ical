@@ -1,5 +1,5 @@
 # Using multi stage build
-ARG BASE_IMAGE="node:22.15.1-bookworm-slim"
+ARG BASE_IMAGE="node:22.16.0-bookworm-slim"
 
 #### Build stage for compiling Typescript files ####
 FROM ${BASE_IMAGE} AS builder
