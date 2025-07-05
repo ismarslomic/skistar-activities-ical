@@ -149,7 +149,7 @@ docker run --privileged --rm tonistiigi/binfmt --install all
 
 docker buildx build \
 --file ./Dockerfile \
---platform linux/amd64,linux/arm/v7,linux/arm64/v8 \
+--platform linux/amd64,linux/arm64/v8 \
 .
 ```
 
