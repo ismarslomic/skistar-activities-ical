@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`CalendarService createCalendar given 200 response with non empty list with activities calendar with 18 events are returned 1`] = `
 "BEGIN:VCALENDAR
