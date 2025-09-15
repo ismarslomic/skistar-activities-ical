@@ -6,7 +6,6 @@ import { SkistarActivity } from '../types/external/SkistarActivity'
 import { SkistarOccurrence } from '../types/external/SkistarOccurrence'
 import { ICalEventData } from 'ical-generator'
 import { DateTime } from 'luxon'
-import { v4 as uuidv4 } from 'uuid'
 import { logger } from '../logging/logger'
 import { SkistarLanguage } from '../types/external/SkistarLanguage'
 
@@ -82,7 +81,7 @@ export class ActivitiesService {
 
           // Note! We make sure that all DateTimes (start, end, stamp) are in same timezone
           const event: ICalEventData = {
-            id: uuidv4(),
+            id: crypto.randomUUID(),
             stamp: DateTime.now().setZone(ActivitiesService.timeZone),
             start: startTime,
             end: endTime,
