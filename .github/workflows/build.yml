@@ -75,7 +75,7 @@ jobs:
       # https://github.com/docker/metadata-action
       - name: Docker meta
         id: meta
-        uses: docker/metadata-action@v5
+        uses: docker/metadata-action@v6
         with:
           images: ${{ env.IMAGE_NAME }}
           # tag = 'main' when push event to 'main' branch
