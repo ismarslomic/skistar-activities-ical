@@ -1,10 +1,13 @@
 {
-  // Using the tsconfig bases for Node22 https://github.com/tsconfig/bases/blob/main/bases/node22.json
-  "extends": "@tsconfig/node22/tsconfig.json",
+  // Using the tsconfig bases for Node24 https://github.com/tsconfig/bases/blob/main/bases/node24.json
+  "extends": "@tsconfig/node24/tsconfig.json",
   "compilerOptions": {
     "preserveConstEnums": true,
+    "rootDir": "src",
     "outDir": "dist",
-    "strict": false
+    "strict": false,
+    "types": ["node", "jest"],
+    "isolatedModules": true
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "__tests__/**/*", "__mocks__/**/*"]
