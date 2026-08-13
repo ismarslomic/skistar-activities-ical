@@ -27,7 +27,7 @@
     "start": "npm run build && node dist/index.js"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.3.5",
+    "@eslint/eslintrc": "^3.3.6",
     "@eslint/js": "^10.0.1",
     "@microsoft/eslint-formatter-sarif": "^3.1.0",
     "@tsconfig/node22": "^22.0.5",
