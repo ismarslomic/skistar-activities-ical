@@ -1,4 +1,4 @@
-import nock = require('nock')
+import nock from 'nock'
 import { ActivitiesService } from '../../src/service/ActivitiesService'
 import * as mockResponse from '../../__mocks__/activitiesResponseMock'
 import { CalendarService } from '../../src/service/CalendarService'

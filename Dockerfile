@@ -1,5 +1,5 @@
 # Using multi stage build
-ARG BASE_IMAGE="node:24.16.0-alpine3.23"
+ARG BASE_IMAGE="node:24.22.1-alpine3.23"
 
 #### Build stage for compiling Typescript files ####
 FROM ${BASE_IMAGE} AS builder

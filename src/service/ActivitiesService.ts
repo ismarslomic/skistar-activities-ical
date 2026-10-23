@@ -47,7 +47,7 @@ export class ActivitiesService {
           resolve(events)
         })
         .catch((error: AxiosError) => {
-          logger.info('Reading activities from Skistar API failed', error)
+          logger.info(`Reading activities from Skistar API failed: ${error.message}`)
           reject(error.message)
         })
     })
