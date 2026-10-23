@@ -16,7 +16,7 @@ const compat = new FlatCompat({
 
 export default [
   {
-    ignores: ['**/node_modules', '**/dist', '**/.husky', '**/*.js', '**/*.mjs'],
+    ignores: ['**/node_modules', '**/dist', '**/.husky', '**/*.js', '**/*.mjs', '**/*.mts'],
   },
   ...compat.extends('eslint:recommended', 'plugin:@typescript-eslint/recommended', 'prettier'),
   {
@@ -37,7 +37,7 @@ export default [
       globals: {
         ...Object.fromEntries(Object.entries(globals.browser).map(([key]) => [key, 'off'])),
         ...globals.node,
-        ...globals.jest,
+        ...globals.vitest,
       },
 
       parser: tsParser,

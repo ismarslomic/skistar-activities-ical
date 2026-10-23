@@ -10,7 +10,7 @@ import { Settings } from 'luxon'
 describe('CalendarService createCalendar', () => {
   afterEach(() => {
     nock.cleanAll()
-    jest.clearAllMocks()
+    vi.clearAllMocks()
     Settings.now = () => new Date().valueOf()
   })
 
@@ -19,7 +19,7 @@ describe('CalendarService createCalendar', () => {
       // mock HTTP request
       nock(ActivitiesService.endpointUrl).post('').reply(200, mockResponse.activities)
       // @ts-expect-error "crypto" is not defined in Node.js"
-      jest.spyOn(globalThis.crypto, 'randomUUID').mockReturnValue('mock-uuid-1234')
+      vi.spyOn(globalThis.crypto, 'randomUUID').mockReturnValue('mock-uuid-1234')
       Settings.now = () => new Date('2023-04-24T13:00:00.000+02:00').valueOf()
     })
 

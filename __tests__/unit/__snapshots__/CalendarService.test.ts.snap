@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`CalendarService createCalendar given 200 response with non empty list with activities calendar with 18 events are returned 1`] = `
+exports[`CalendarService createCalendar > given 200 response with non empty list with activities > calendar with 18 events are returned 1`] = `
 "BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:-//skistar.com//activities//NO
